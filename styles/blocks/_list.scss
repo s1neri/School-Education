@@ -1,0 +1,69 @@
+@use '../helpers' as *;
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: rem(85) rem(40);
+
+  @include laptop {
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(68) rem(40);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    max-width: rem(400);
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(20);
+    padding: rem(80) rem(50) rem(50);
+    height: 100%;
+    border: var(--border);
+    border-radius: rem(12);
+    box-shadow: var(--box-shadow-dark);
+
+    @include laptop {
+      padding: rem(60) rem(40) rem(40);
+      row-gap: rem(16);
+      border-radius: rem(10);
+    }
+
+    @include mobile {
+      padding-top: rem(50);
+    }
+  }
+
+  &__icon {
+    @include flex-center;
+
+    svg {
+      width: rem(34);
+      width: rem(34);
+    }
+
+    position: absolute;
+    top: -11%;
+    left: 13%;
+    padding: rem(20);
+    background-color: var(--color-orange-90);
+    border: var(--border);
+    border-radius: rem(12);
+
+    @include laptop {
+      padding: rem(16);
+      border-radius: rem(8);
+
+      svg {
+        width: rem(24);
+        height: rem(24);
+      }
+    }
+  }
+}

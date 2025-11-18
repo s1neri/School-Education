@@ -1,0 +1,63 @@
+@use '../helpers' as *;
+
+.hero {
+  display: flex;
+  column-gap: rem(60);
+  align-items: center;
+
+  @include laptop {
+    column-gap: rem(50);
+  }
+
+  @include tablet {
+    flex-direction: column;
+    row-gap: rem(40);
+  }
+
+  &__picture {
+    @include tablet {
+      max-width: rem(500);
+    }
+  }
+
+  &__image {
+    background-color: var(--color-orange-80);
+    background-image: url("../../images/hero/main-picture.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__body {
+    @include tablet-above {
+      width: 60%;
+    }
+
+    @include tablet {
+      max-width: rem(700);
+    }
+  }
+
+  &__subtitle {
+    display: inline-block;
+    padding-bottom: rem(6);
+    border-bottom: var(--border);
+    font-size: fluid(22, 16);
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: fluid(30, 18);
+    }
+
+    &--orange {
+      color: var(--color-orange-65);
+    }
+  }
+
+  &__description {
+    &:not(:last-child) {
+      margin-bottom: fluid(60, 40);
+    }
+  }
+}

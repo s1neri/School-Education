@@ -1,0 +1,67 @@
+@use '../helpers' as *;
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-orange-97);
+  border: var(--border);
+  border-radius: rem(6);
+  padding: rem(8);
+
+  &::after {
+    --size: #{rem(24)};
+
+    @include square(var(--size));
+
+    content: '';
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &--mail {
+    &::after {
+      background-image: url("../icons/mail.svg");
+    }
+  }
+
+  &--telephone {
+    &::after {
+      background-image: url("../icons/telephone.svg");
+    }
+  }
+
+  &--geoposition {
+    &::after {
+      background-image: url("../icons/geo.svg");
+    }
+  }
+}
+
+.icon__dark {
+  display: inline-flex;
+  align-items: center;
+  column-gap: rem(14);
+
+  @include laptop {
+    column-gap: rem(10);
+  }
+
+  &::after {
+    --size: #{fluid(30, 20)};
+
+    @include square(var(--size));
+
+    content: '';
+    flex-shrink: 0;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &--grey-arrow {
+    &::after {
+      background-image: url("../icons/icon-arrow-right.svg");
+    }
+  }
+}

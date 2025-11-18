@@ -1,0 +1,162 @@
+@use '../helpers' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding-top: rem(18);
+
+  @include laptop {
+    padding-top: rem(16);
+  }
+
+  &__promo {
+    &-inner {
+      position: relative;
+      padding-block: rem(14);
+      border: var(--border);
+      border-radius: rem(8);
+      text-align: center;
+      background-color: var(--color-orange-90);
+      overflow: hidden;
+
+      @include laptop {
+        padding-block: rem(12);
+        border-radius: rem(6);
+      }
+
+      &::before {
+        @include square(fluid(72, 32));
+
+        content: '';
+        position: absolute;
+        background-image: url("../images/header/abstract-ball-left.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        top: -46%;
+        left: 20%;
+
+        @include mobile {
+          left: 0;
+          top: -25%;
+        }
+      }
+
+      &::after {
+        @include square(fluid(40, 32));
+
+        content: '';
+        position: absolute;
+        background-image: url("../images/header/abstract-ball-right.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        top: 50%;
+        left: 66%;
+
+        @include laptop {
+          left: 72%;
+          top: 50%;
+        }
+
+        @include mobile {
+          left: 95%;
+          top: 72%;
+        }
+      }
+    }
+  }
+
+  &__body {
+    &-inner {
+      display: flex;
+      justify-content: space-between;
+      column-gap: rem(20);
+      margin-top: rem(14);
+      border: var(--border);
+      border-radius: rem(12);
+      align-items: stretch;
+      overflow-x: auto;
+      background-color: var(--color-light);
+
+      @include laptop {
+        border-radius: rem(8);
+      }
+    }
+  }
+
+  &__logo {
+    border-right: var(--border);
+    padding: rem(20) rem(24);
+    background-color: var(--color-orange-65);
+
+    @include laptop {
+      padding: rem(14) rem(20);
+    }
+  }
+
+  &__image {
+    max-width: fluid(183, 137);
+  }
+
+  &__overlay {
+    @include mobile {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      row-gap: 3rem;
+      justify-content: center;
+      padding: 1rem;
+      background-color: var(--color-orange-80);
+      transition-duration: var(--transition-duration);
+
+      &:not(.is-active) {
+        @include hide;
+          translate: 100%;
+      }
+    }
+  }
+
+  &__menu {
+    &-list {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+
+      @include mobile {
+        flex-direction: column;
+        row-gap: 1rem;
+      }
+    }
+
+    &-item {
+      @include mobile-above {
+
+        border-left: var(--border);
+
+        &:last-child {
+          background-color: var(--color-orange-75);
+        }
+      }
+    }
+
+    &-link {
+      padding: rem(25) rem(34);
+
+      @include laptop {
+        padding: rem(21) rem(30);
+      }
+
+      @include mobile {
+        border-radius: rem(8);
+      }
+
+      &.is-active {
+        background-color: var(--color-orange-95);
+        pointer-events: none;
+      }
+    }
+  }
+}

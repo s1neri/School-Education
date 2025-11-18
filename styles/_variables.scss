@@ -1,0 +1,46 @@
+@use 'helpers' as *;
+
+:root {
+  --color-light: #FFFFFF;
+
+  --color-dark: #000000;
+
+  --box-shadow-color: #1E1E1E;
+
+  --color-gray-10: #191919;
+  --color-gray-15: #262626;
+  --color-gray-20: #333333;
+  --color-gray-30: #4C4C4D;
+  --color-gray-40: #656567;
+
+  --color-orange-65: #FF8D4C;
+  --color-orange-75: #FFAE80;
+  --color-orange-80: #FFBE99;
+  --color-orange-90: #FFDECC;
+  --color-orange-95: #FFEFE5;
+  --color-orange-97: #FFF5F0;
+
+  --border: #{rem(2)} solid var(--color-gray-15);
+
+  --box-shadow-dark: #{rem(6)} #{rem(6)} 0 #{rem(2)} var(--box-shadow-color);
+  --box-shadow-light: #{rem(8)} #{rem(8)} 0 #{rem(1)} var(--color-orange-80);
+
+  --font-family-base: 'Outfit', sans-serif;
+  --font-family-accent: 'Raleway', sans-serif;
+
+  --container-width: #{rem(1592)};
+  --container-width--wide: #{rem(1820)};
+  --container-padding-x: #{rem(16)};
+
+  --transition-duration: 0.2s;
+
+  @include laptop {
+    --container-width: #{rem(1280)};
+    --container-width--wide: #{rem(1340)};
+    --box-shadow-light: #{rem(6)} #{rem(6)} 0 #{rem(1)} var(--color-orange-80);
+  }
+
+  @include mobile {
+    --box-shadow-light: #{rem(4)} #{rem(4)} 0 #{rem(1)} var(--color-orange-80);
+  }
+}
