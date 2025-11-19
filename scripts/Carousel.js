@@ -19,18 +19,18 @@ class Carousel {
   }
 
   init() {
-    this.buttonLeftElement.addEventListener('click', () => this.prev());
-    this.buttonRightElement.addEventListener('click', () => this.next());
+    this.buttonLeftElement.addEventListener('click', this.prev);
+    this.buttonRightElement.addEventListener('click', this.next);
     this.updateSlides();
   }
 
-  prev () {
+  prev = () => {
     const firstSlide = this.slides.shift();
     this.slides.push(firstSlide);
     this.updateSlides();
   }
   
-  next () {
+  next = () => {
     const lastSlide = this.slides.pop();
     this.slides.unshift(lastSlide);
     this.updateSlides();

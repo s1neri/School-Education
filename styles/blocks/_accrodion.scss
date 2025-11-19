@@ -1,0 +1,126 @@
+@use '../helpers' as *;
+
+.accordion {
+  padding: fluid(40, 24) fluid(40, 30);
+  background-color: var(--color-orange-95);
+  border: var(--border);
+  border-radius: rem(12);
+
+  &:has(.accordion__details[open]) {
+    background-color: var(--color-light);
+  }
+
+  @include laptop {
+    border-radius: rem(10);
+  }
+
+  &__details {
+    &[open] {
+      .accordion__button {
+        &::after {
+          rotate: 0deg;
+        }
+      }
+
+      & + .accordion__content {
+        grid-template-rows: 1fr;
+      }
+    }
+  }
+
+  &__summary {
+    display: flex;
+    justify-content: space-between;
+    column-gap: rem(10);
+    align-items: center;
+    list-style: none;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+  }
+
+  &__title {
+    color: var(--color-gray-15);
+    font-family: var(--font-family-base);
+    font-size: rem(22);
+    font-weight: 600;
+    line-height: 1.5;
+    transition-duration: var(--transition-duration);
+
+    @include hover {
+      color: var(--color-orange-65);
+    }
+
+    @include laptop {
+      font-size: rem(18);
+    }
+  }
+
+  &__button {
+    @include flex-center(true);
+    @include square(rem(40));
+
+    position: relative;
+    padding: rem(8);
+    flex-shrink: 0;
+    border: var(--border);
+    border-radius: rem(6);
+    background-color: var(--color-orange-97);
+
+    @include laptop {
+      @include square(rem(32));
+
+      border-radius: rem(4);
+    }
+
+    &::before,
+    &::after {
+      @include abs-center;
+
+      content: '';
+      right: 0;
+      width: rem(16);
+      height: rem(2);
+      background-color: var(--color-gray-15);
+      border-radius: 1rem;
+      transition-duration: var(--transition-duration);
+
+      @include mobile {
+        width: rem(13);
+      }
+    }
+
+    &::after {
+      rotate: 90deg;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition-duration: 0.3s;
+
+    &-inner {
+      overflow: hidden;
+    }
+
+    &-body {
+      padding-top: rem(25);
+      margin-top: rem(23);
+      border-top: var(--border);
+
+      @include laptop {
+        padding-top: rem(21);
+        margin-top: rem(19);
+      }
+
+      @include mobile {
+        padding-top: rem(25);
+        margin-top: rem(23);
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@use '../helpers' as *;
+
+.accordion-group {
+  column-gap: rem(50);
+
+  @include tablet-above {
+    column-count: 2;
+  }
+
+  @include laptop {
+    column-gap: rem(40);
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    max-width: rem(790);
+  }
+
+  &__wrapper {
+    break-inside: avoid;
+    display: grid;
+    row-gap: fluid(30, 20);
+
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+}

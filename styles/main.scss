@@ -16,9 +16,14 @@
 @use 'blocks/section';
 @use 'blocks/list';
 @use 'blocks/testimonials';
+@use 'blocks/accordion-group';
+@use 'blocks/accrodion';
+@use 'blocks/navigate';
 
+/*
 .header,
 main > *:not(:last-child),
 .footer {
   display: none !important;
 }
+*/
