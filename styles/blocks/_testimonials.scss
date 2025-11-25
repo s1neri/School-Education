@@ -17,20 +17,6 @@
   }
 
   &__button {
-    @include flex-center(true);
-    padding: rem(14);
-    background-color: var(--color-light);
-    border: var(--border);
-    border-radius: rem(8);
-
-    @include hover {
-      background-color: var(--color-orange-65);
-    }
-
-    @include laptop {
-      padding: rem(12);
-    }
-
     @include mobile {
       order: 2;
       flex: 0 0 rem(48);

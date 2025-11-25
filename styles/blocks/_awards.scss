@@ -1,0 +1,48 @@
+@use '../helpers' as *;
+
+.awards {
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(50, 30);
+
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__description {
+    font-family: var(--font-family-accent);
+    font-size: rem(22);
+    font-weight: 700;
+
+    @include laptop {
+      font-size: rem(18);
+    }
+  }
+
+  &__list {
+    grid-auto-rows: 1fr;
+
+    .list__item {
+
+      @include tablet {
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+
+      @include mobile {
+        &:nth-child(2) {
+          display: none;
+        }
+      }
+    }
+
+    .list__description {
+      @include mobile {
+        min-height: rem(200);
+      }
+    }
+  }
+}

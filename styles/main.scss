@@ -13,17 +13,24 @@
 @use 'blocks/contacts';
 @use 'blocks/hero';
 @use 'blocks/metrics';
+@use 'blocks/navigate';
 @use 'blocks/section';
 @use 'blocks/list';
 @use 'blocks/testimonials';
 @use 'blocks/accordion-group';
 @use 'blocks/accrodion';
-@use 'blocks/navigate';
+@use 'blocks/grid';
+@use 'blocks/mission';
+@use 'blocks/awards';
+@use 'blocks/history';
+@use 'blocks/members';
+@use 'blocks/learn';
+@use 'blocks/tabs';
+@use 'blocks/gallery';
 
-/*
+
 .header,
 main > *:not(:last-child),
 .footer {
   display: none !important;
 }
-*/

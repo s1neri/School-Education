@@ -14,6 +14,12 @@ section:first-child {
   align-items: center;
   row-gap: fluid(108, 78);
 
+  &:has(.tabs) {
+    @include mobile {
+      display: contents;
+    }
+  }
+
   &__header {
     &-info {
       text-align: center;
@@ -25,6 +31,12 @@ section:first-child {
 
       @include tablet {
         padding: 0;
+      }
+
+      .section__quote {
+        &:not(:last-child) {
+          margin-bottom: fluid(19, 10);
+        }
       }
     }
   }
@@ -38,9 +50,9 @@ section:first-child {
     border-radius: rem(8);
     background-color: var(--color-light);
 
-    &:not(:last-child) {
+/*    &:not(:last-child) {
       margin-bottom: fluid(19, 10);
-    }
+    }*/
 
     @include laptop {
       padding: rem(8) rem(14);
@@ -51,6 +63,77 @@ section:first-child {
   &__title {
     &:not(:last-child) {
       margin-bottom: fluid(19, 10);
+    }
+  }
+
+  &__knowledge {
+    position: relative;
+    padding: fluid(150, 50) fluid(120, 30);
+    background-color: var(--color-light);
+    border-radius: rem(12);
+    border: var(--border);
+    box-shadow: var(--box-shadow-dark);
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: fluid(200, 100);
+      aspect-ratio: 1;
+      top: 0;
+      left: 0;
+      background-image: url("../../images/section/abstract-top-left.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    @include laptop {
+      border-radius: rem(10);
+    }
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+    }
+
+    &-info {
+      display: flex;
+      gap: rem(20) rem(50);
+
+      @include tablet-above {
+        align-items: center;
+      }
+
+      @include tablet {
+        flex-direction: column;
+        max-width: rem(500);
+      }
+    }
+
+    &-inner {
+      @include tablet-above {
+        flex: 1;
+      }
+
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+//        max-width: rem(500);
+      }
+
+      .section__quote {
+        margin-bottom: rem(14);
+        padding: rem(10) rem(20);
+
+        @include laptop {
+          margin-bottom: rem(10);
+          padding: rem(8) rem(16);
+        }
+      }
     }
   }
 }

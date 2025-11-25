@@ -1,0 +1,125 @@
+@use '../helpers' as *;
+
+.history {
+  padding: rem(150);
+  background-color: var(--color-light);
+  border: var(--border);
+  border-radius: rem(12);
+  box-shadow: var(--box-shadow-dark);
+
+  @include laptop {
+    padding: rem(100);
+  }
+
+  @include mobile {
+    padding: rem(50) rem(20) rem(50) rem(10);
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(100, 50);
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: rem(19);
+      height: 85%;
+      top: 50%;
+      left: 0;
+      translate: 0 -50%;
+      background-image: url("../../icons/left-line.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 1;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    column-gap: rem(50);
+
+    @include laptop {
+      column-gap: rem(40);
+    }
+
+    @include tablet-above {
+      align-items: center;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      row-gap: rem(30);
+    }
+  }
+
+  &__year {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: rem(20);
+    padding: fluid(30, 20) fluid(50, 24);
+    background-color: var(--color-light);
+    border: var(--border);
+    box-shadow: var(--box-shadow-dark);
+    border-radius: rem(12);
+
+    @include laptop {
+      border-radius: rem(10);
+    }
+
+    &:before {
+      content: '';
+      width: fluid(87, 50);
+      height: fluid(87, 50);
+      flex-shrink: 0;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      background-image: url("../../icons/Abstract Design.svg");
+    }
+  }
+
+  &__inner {
+    position: relative;
+    padding-left: fluid(84, 51);
+
+    @include tablet {
+      padding-left: rem(44);
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: rem(95);
+      height: rem(20);
+      top: 50%;
+      left: 0;
+      translate: 0 -50%;
+      background-image: url("../../icons/decoration-center-left.svg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 2;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    row-gap: fluid(20, 12);
+
+    @include tablet {
+      padding-left: rem(44);
+    }
+  }
+}

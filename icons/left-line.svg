@@ -1,0 +1,14 @@
+<svg viewBox="0 0 19.416 892" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19.416016" height="892.000000" fill="none" customFrame="#000000">
+	<defs>
+		<clipPath id="clipPath_1">
+			<rect width="12.000042" height="758.000000" x="3.708008" y="64.000000" fill="rgb(255,255,255)" />
+		</clipPath>
+	</defs>
+	<rect id="Container" width="19.416245" height="892.000000" x="0.000000" y="0.000000" />
+	<g id="Sub Container" customFrame="url(#clipPath_1)">
+		<rect id="Sub Container" width="12.000042" height="758.000000" x="3.708008" y="64.000000" fill="rgb(255,190.039,153)" />
+		<line id="Line" x1="0" x2="758" y1="0" y2="0" stroke="rgb(0,0,0)" stroke-width="2" transform="matrix(-4.37112e-08,1,-1,-4.37112e-08,9.70801,64)" />
+	</g>
+	<circle id="Shape" cx="9.70800781" cy="74" r="10" opacity="0" fill="rgb(255,255,255)" />
+	<circle id="Shape" cx="9.70800781" cy="74" r="11" opacity="0" stroke="rgb(38.25,38.25,38.25)" stroke-width="2" />
+</svg>

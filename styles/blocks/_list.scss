@@ -1,17 +1,13 @@
 @use '../helpers' as *;
 
 .list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: rem(85) rem(40);
 
   @include laptop {
-    grid-template-columns: repeat(2, 1fr);
     gap: rem(68) rem(40);
   }
 
   @include mobile {
-    grid-template-columns: 1fr;
     max-width: rem(400);
   }
 
@@ -44,12 +40,9 @@
   &__icon {
     @include flex-center;
 
-    svg {
-      width: rem(34);
-      width: rem(34);
-    }
-
     position: absolute;
+    width: rem(74);
+    aspect-ratio: 1;
     top: -11%;
     left: 13%;
     padding: rem(20);
@@ -58,6 +51,7 @@
     border-radius: rem(12);
 
     @include laptop {
+      width: rem(56);
       padding: rem(16);
       border-radius: rem(8);
 

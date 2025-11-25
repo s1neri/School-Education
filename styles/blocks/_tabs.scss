@@ -1,0 +1,45 @@
+@use '../helpers' as *;
+
+.tabs {
+  @include mobile {
+    margin-bottom: rem(80);
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    column-gap: rem(15);
+    overflow-x: auto;
+    margin-bottom: fluid(295, 197);
+    margin-top: fluid(100, 50);
+//    margin-inline: auto;
+
+    @include laptop {
+      column-gap: rem(10);
+    }
+
+    @include mobile {
+      justify-content: flex-start;
+    }
+  }
+
+  &__button {
+    flex-shrink: 0;
+
+    &.is-active {
+      background-color: var(--color-orange-95);
+      pointer-events: none;
+
+    }
+
+    @include hover {
+      background-color: var(--color-orange-65);
+    }
+  }
+
+  &__content {
+    &:not(.is-active) {
+      display: none;
+    }
+  }
+}
