@@ -937,7 +937,7 @@ button[aria-label]::before {
 }
 .hero__image {
   background-color: var(--color-orange-80);
-  background-image: url("../../images/hero/main-picture.png");
+  background-image: url("../images/hero/main-picture.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1076,7 +1076,7 @@ button[aria-label]::before {
   translate: -50% -50%;
   top: 100%;
   left: 50%;
-  background-image: url("../../images/navigate/decorate-border-bottom.png");
+  background-image: url("../images/navigate/decorate-border-bottom.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -1200,7 +1200,7 @@ section:first-child {
   aspect-ratio: 1;
   top: 0;
   left: 0;
-  background-image: url("../../images/section/abstract-top-left.png");
+  background-image: url("../images/section/abstract-top-left.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -1457,7 +1457,7 @@ section:first-child {
   }
 }
 .testimonials__star {
-  background: url("../../icons/star-yellow.svg") center/contain no-repeat;
+  background: url("../icons/star-yellow.svg") center/contain no-repeat;
   width: 1.5rem;
   height: 1.5rem;
 }
@@ -1753,7 +1753,7 @@ section:first-child {
   top: 50%;
   left: 0;
   translate: 0 -50%;
-  background-image: url("../../icons/left-line.svg");
+  background-image: url("../icons/left-line.svg");
   background-position: center;
   background-repeat: no-repeat;
   z-index: 1;
@@ -1807,7 +1807,7 @@ section:first-child {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url("../../icons/Abstract Design.svg");
+  background-image: url("../icons/Abstract Design.svg");
 }
 .history__inner {
   position: relative;
@@ -1826,7 +1826,7 @@ section:first-child {
   top: 50%;
   left: 0;
   translate: 0 -50%;
-  background-image: url("../../icons/decoration-center-left.svg");
+  background-image: url("../icons/decoration-center-left.svg");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -2203,7 +2203,7 @@ section:first-child {
   top: 85%;
   left: 50%;
   translate: -50% 0;
-  background-image: url("../../icons/decorate-center-bottom.svg");
+  background-image: url("../icons/decorate-center-bottom.svg");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
