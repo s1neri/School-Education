@@ -140,6 +140,13 @@
   }
 
   &__soc1als {
+    display: flex;
+    column-gap: rem(14);
+
+    @include mobile {
+      column-gap: rem(10);
+    }
+
     &-icon {
       padding: fluid(16, 12);
       border: var(--border);

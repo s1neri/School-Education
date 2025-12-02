@@ -1,0 +1,43 @@
+@use '../helpers' as *;
+
+.feedback-form {
+  position: relative;
+  padding: fluid(120, 80) fluid(100, 30);
+  display: grid;
+  gap: fluid(50, 30);
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--color-light);
+  border: var(--border);
+  border-radius: rem(12);
+  box-shadow: var(--box-shadow-dark);
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+
+  @include mobile {
+    border-radius: rem(10);
+  }
+
+  .footer__soc1als {
+    position: absolute;
+    left: 50%;
+    top: calc(#{fluid(68, 60)} / -2);
+    translate: -50% 0;
+    column-gap: rem(20);
+
+    &-icon {
+      padding: rem(20) fluid(60, 24);
+
+      @include laptop {
+        padding-block: rem(16);
+      }
+    }
+  }
+
+  &__cell {
+    &--wide {
+      grid-column: -1 / 1;
+    }
+  }
+}

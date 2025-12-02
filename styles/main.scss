@@ -27,10 +27,13 @@
 @use 'blocks/learn';
 @use 'blocks/tabs';
 @use 'blocks/gallery';
+@use 'blocks/process';
+@use 'blocks/structure';
+@use 'blocks/feedback-form';
+@use 'blocks/field';
 
-
-.header,
+/*.header,
 main > *:not(:last-child),
 .footer {
   display: none !important;
-}
+}*/

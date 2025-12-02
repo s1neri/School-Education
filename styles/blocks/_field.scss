@@ -1,0 +1,44 @@
+@use '../helpers' as *;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(20, 10);
+
+  &__label {
+    font-size: rem(22);
+    font-weight: 600;
+
+    @include laptop {
+      font-size: rem(20);
+    }
+  }
+
+  &__control {
+    padding: fluid(30, 20);
+    border: var(--border);
+    border-radius: rem(8);
+
+    @include laptop {
+      border-radius: rem(6);
+    }
+
+    @include hover {
+      border-color: var(--color-orange-65);
+      box-shadow: var(--box-shadow-light);
+    }
+
+    &:user-invalid {
+      border-color: var(--color-red);
+    }
+  }
+
+  textarea.field__control {
+    resize: vertical;
+    min-height: rem(218);
+  }
+
+  &__required-star {
+    color: var(--color-red);
+  }
+}

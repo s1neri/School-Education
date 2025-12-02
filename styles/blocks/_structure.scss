@@ -1,0 +1,115 @@
+@use '../helpers' as *;
+
+.structure {
+  &__wrapper {
+    overflow-x: auto;
+    padding: fluid(60, 30);
+    background-color: var(--color-light);
+    border: var(--border);
+    box-shadow: var(--box-shadow-dark);
+    border-radius: rem(12);
+
+    &::-webkit-scrollbar {
+      background-color: var(--color-dark);
+      height: rem(8);
+      border-radius: rem(59);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-orange-75);
+      border-radius: rem(59);
+    }
+
+    @include laptop {
+      border-radius: rem(10);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: fluid(80, 40);
+    }
+  }
+
+  &__table {
+    min-width: rem(1280);
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  &__head {
+    background-color: var(--color-orange-95);
+  }
+
+  &__main-cell {
+    white-space: nowrap;
+    padding: rem(25) rem(34);
+    text-align: left;
+    font-weight: 500;
+    border: 1px solid var(--color-dark);
+
+    &:first-child {
+      border-top-left-radius: rem(12);
+      border-bottom-left-radius: rem(12);
+    }
+
+    &:last-child {
+      border-top-right-radius: rem(12);
+      border-bottom-right-radius: rem(12);
+    }
+
+    &:not(:last-child) {
+      border-right: none;
+    }
+
+    @include laptop {
+      padding: rem(18) rem(30);
+    }
+  }
+
+  &__stroke {
+    &:not(:last-child) {
+      .structure__cell {
+        border-bottom: none;
+      }
+    }
+
+    &:first-child {
+      .structure__cell:first-child{
+          border-top-left-radius: rem(12);
+      }
+
+      .structure__cell:last-child {
+        border-top-right-radius: rem(12);
+      }
+    }
+
+    &:last-child {
+      .structure__cell:first-child {
+        border-bottom-left-radius: rem(12);
+      }
+
+      .structure__cell:last-child {
+        border-bottom-right-radius: rem(12);
+      }
+    }
+  }
+
+  &__cell {
+    white-space: nowrap;
+    padding: rem(30) rem(34);
+    border: 1px solid var(--color-dark);
+
+    &:not(:last-child) {
+      border-right: none;
+    }
+
+    @include laptop {
+      padding: rem(24) rem(30);
+    }
+  }
+
+  &__space {
+    height: rem(30);
+  }
+}

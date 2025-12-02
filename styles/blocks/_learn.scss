@@ -21,24 +21,48 @@
     border-radius: rem(12);
     box-shadow: var(--box-shadow-dark);
 
-    &::before {
-      position: absolute;
-      content: '';
-      top: 0;
-      left: 50%;
-      width: 25%;
-      translate: -50% 0;
-      height: calc(
-        fluid(304, 191) + #{fluid(50, 30)} + #{fluid(50, 30) / 2}
-      );
-      background-color: var(--color-orange-95);
-      border: var(--border);
-      border-top: none;
-      border-radius: 0 0 rem(12) rem(12);
-      z-index: 1;
+    &--vertical {
+      &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 50%;
+        width: 25%;
+        translate: -50% 0;
+        height: calc(
+          fluid(304, 191) + #{fluid(50, 30)} + #{fluid(50, 30) / 2}
+        );
+        background-color: var(--color-orange-95);
+        border: var(--border);
+        border-top: none;
+        border-radius: 0 0 rem(12) rem(12);
+        z-index: 1;
 
-      @include laptop {
-        border-radius: 0 0 rem(10) rem(10);
+        @include laptop {
+          border-radius: 0 0 rem(10) rem(10);
+        }
+      }
+    }
+
+    &--horizontal {
+      &::before {
+        position: absolute;
+        content: '';
+        top: calc(fluid(50, 30) + (#{fluid(304, 191)}) / 2);
+        left: 0;
+        width: 100%;
+        translate: 0 -50%;
+        height: rem(93);
+        background-color: var(--color-orange-95);
+        border: var(--border);
+        border-inline: none;
+        z-index: 1;
+      }
+
+      &:nth-child(even) {
+        &::before {
+          top: calc(fluid(50, 30) + #{fluid(304, 191)} - rem(47));
+        }
       }
     }
 

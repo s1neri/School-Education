@@ -22,5 +22,9 @@
       grid-template-columns: 1fr;
     }
   }
+
+  &--5-columns {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 

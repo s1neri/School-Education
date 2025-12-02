@@ -28,4 +28,15 @@
       column-gap: rem(16);
     }
   }
+
+  &__submit {
+    padding-block: fluid(30, 16);
+    border: var(--border);
+    border-radius: fluid(12, 8);
+    background-color: var(--color-orange-75);
+
+    @include hover {
+      background-color: var(--color-orange-90);
+    }
+  }
 }

@@ -36,6 +36,12 @@
       background-image: url("../icons/geo.svg");
     }
   }
+
+  &--hours {
+    &::after {
+      background-image: url("../icons/time.svg");
+    }
+  }
 }
 
 .icon__dark {
